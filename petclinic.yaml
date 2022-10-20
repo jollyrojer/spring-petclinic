@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: petclinic-test
-        image: europe-west1-docker.pkg.dev/gd-gcp-fmc-sandbox/ford-container-repo/petclinic:0.5
+        image: __DIGEST__
         ports:
         - containerPort: 8080
 ---
@@ -28,7 +28,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 8080
+    - port: 80
+      targetPort: 8080
   selector:
     app: petclinic
